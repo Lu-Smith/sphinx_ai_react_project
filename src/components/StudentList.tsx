@@ -24,7 +24,6 @@ const StudentList:React.FC<StudentListProps> = ({ students, columns }) => {
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
 
   useEffect(() => {
-    // Set initial sorted students
     setSortedStudents(students);
   }, [students]);
 
