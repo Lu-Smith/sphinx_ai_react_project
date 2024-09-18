@@ -1,10 +1,23 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import StudentsPage from './pages/StudentsPage';
 
-function App() {
+const App: React.FC = () => {
 
   return (
-    <>
-      <h1>Hello Students</h1>
-    </>
+    <Router>
+      <div className="App">
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/student">Students</Link>
+        </nav>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/student" element={<StudentsPage />} />
+        </Routes>
+      </div>
+    </Router>
   )
 }
 
