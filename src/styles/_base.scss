@@ -1,3 +1,32 @@
+nav {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 80px;
+  background-color: $secondary-background-color;
+  @include displayCenterFlex;
+  gap: 40px;
+
+  a {
+    font-weight: 700;
+  }
+}
+
 h1 {
   font-family: $secondary-family-font;
+  font-size: $large-font-size;
+  line-height: $large-line-height-size;
 }
+
+a {
+  text-decoration: none;
+  color: $primary-font-color;
+  border-bottom: 2px solid transparent;
+  transition: 200ms all ease-in-out;
+}
+
+a:hover {
+  color: rgba($primary-font-color, 0.8);
+  border-bottom: 2px solid rgba($primary-font-color, 0.8);
+}
+
