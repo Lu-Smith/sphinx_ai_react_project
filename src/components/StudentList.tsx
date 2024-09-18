@@ -6,6 +6,7 @@ interface StudentProps {
   surname: string;
   form: string;
   send: boolean;
+  src: string;
 }
 
 interface Column {
@@ -59,11 +60,21 @@ const StudentList:React.FC<StudentListProps> = ({ students, columns }) => {
             <tr key={student.id}>
               {columns.map((col) => (
                 <td key={col.key}>
-                  {isBoolean(student[col.key])
-                    ? student[col.key]
-                      ? 'Yes'
-                      : 'No'
-                    : student[col.key]}
+                   {col.key === 'forename' ? (
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                      <img
+                        src={student.src}
+                        alt={`${student.forename}'s avatar`}
+                        style={{ width: '30px', height: '30px', marginRight: '10px', borderRadius: '50%' }}
+                      />
+                      {/* Display forename next to the avatar */}
+                      {student.forename}
+                    </div>
+                  ) : isBoolean(student[col.key]) ? (
+                    student[col.key] ? 'Yes' : 'No'
+                  ) : (
+                    student[col.key]
+                  )}
                 </td>
               ))}
             </tr>
