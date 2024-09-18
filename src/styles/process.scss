@@ -1,0 +1,16 @@
+.ExplanationPage {
+  max-width: min(90%, 800px);
+
+  h2 {
+    padding: 40px;
+    margin-top: 40px;
+  }
+
+  ol {
+    text-align: left;
+
+    li {
+      margin-left: 30px;
+    }
+  }
+}
