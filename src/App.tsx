@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import StudentsPage from './pages/StudentsPage';
 import ExplanationPage from './pages/ExplanationPage';
+import './styles/app.scss';
 
 const App: React.FC = () => {
 

@@ -1,0 +1,15 @@
+@import './variables';
+@import './mixins';
+@import './base';
+
+//components
+@import './home';
+@import './students';
+
+.App {
+  font-family: $primary-family-font;
+  background-color: $primary-background-color;
+  color: $primary-font-color;
+  width: 100vw;
+  height: 100vh;
+}
