@@ -1,7 +1,8 @@
 const HomePage = () => {
     return ( 
         <div className="HomePage">
-            <h2>I am Home Page</h2>
+            <h1>Welcome to the friendly Student Managment Hub</h1>
+            <p>Empowering students to achieve their potential with AI support, while making life easier for teachers!</p>
         </div>
      );
 }
