@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import StudentList from "../components/StudentList";
-import studentsData from '../data/students.json';
+import studentsData from '../data/students';
 import SearchBar from '../components/SearchBar';
 
 interface StudentProps {
@@ -9,6 +9,7 @@ interface StudentProps {
     surname: string;
     form: string;
     send: boolean;
+    src: string;
 }
 
 interface Column {
