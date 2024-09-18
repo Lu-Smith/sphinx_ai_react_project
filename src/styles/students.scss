@@ -1,0 +1,63 @@
+.StudentsPage {
+  width: 100%;
+  height: 100%;
+
+  table {
+    margin: 0 auto;
+    margin-top: 40px;
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-size: $primary-family-font;
+    background-color: $secondary-background-color;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    width: min(90%, 800px);
+    text-align: center;
+  }
+
+  thead {
+    background-color: $primary-font-color;
+    color: $primary-background-color;
+
+    th {
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      height: 60px;
+      padding: 0 20px;
+
+      &:hover {
+        background-color: $focus-font-color;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      height: 60px;
+      border: 1px solid $primary-background-color;
+
+      &:hover {
+        background-color: $focus-font-color;
+        color: $primary-background-color;
+      }
+
+      td {
+        height: 60px;
+        padding: 0 20px;
+       
+        .forename-container {
+          @include displayDirectionJustifyFlex(row, start);
+        }
+
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+}
