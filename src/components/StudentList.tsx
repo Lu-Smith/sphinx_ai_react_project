@@ -44,44 +44,40 @@ const StudentList:React.FC<StudentListProps> = ({ students, columns }) => {
   const isBoolean = (value: any): value is boolean => typeof value === 'boolean';
 
   return (
-    <div className="StudentList">
-      <table>
-        <thead>
-          <tr>
+    <table>
+      <thead>
+        <tr>
+          {columns.map((col) => (
+            <th key={col.key}  onClick={() => handleSort(col.key)}>
+              {col.label} {sortColumn === col.key ? (sortOrder === 'asc' ? '🔼' : '🔽') : ''}
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {sortedStudents.map((student) => (
+          <tr key={student.id}>
             {columns.map((col) => (
-              <th key={col.key}  onClick={() => handleSort(col.key)}>
-                {col.label} {sortColumn === col.key ? (sortOrder === 'asc' ? '🔼' : '🔽') : ''}
-              </th>
+              <td key={col.key}>
+                  {col.key === 'forename' ? (
+                  <div className='forename-container'>
+                    <img
+                      src={student.src}
+                      alt={`${student.forename}'s avatar`}
+                    />
+                    {student.forename}
+                  </div>
+                ) : isBoolean(student[col.key]) ? (
+                  student[col.key] ? 'Yes' : 'No'
+                ) : (
+                  student[col.key]
+                )}
+              </td>
             ))}
           </tr>
-        </thead>
-          <tbody>
-          {sortedStudents.map((student) => (
-            <tr key={student.id}>
-              {columns.map((col) => (
-                <td key={col.key}>
-                   {col.key === 'forename' ? (
-                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                      <img
-                        src={student.src}
-                        alt={`${student.forename}'s avatar`}
-                        style={{ width: '30px', height: '30px', marginRight: '10px', borderRadius: '50%' }}
-                      />
-                      {/* Display forename next to the avatar */}
-                      {student.forename}
-                    </div>
-                  ) : isBoolean(student[col.key]) ? (
-                    student[col.key] ? 'Yes' : 'No'
-                  ) : (
-                    student[col.key]
-                  )}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+        ))}
+      </tbody>
+    </table>
   );
 };
 
