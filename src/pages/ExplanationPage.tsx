@@ -47,6 +47,13 @@ const ExplanationPage: React.FC = () => {
             <li>Simplified the code by removing unnecessary code from the SearchBar and using only filtered students in the <code>StudentList</code> component.</li>
           </ul>
         </li>
+        <li>
+          <strong>Made Table Dynamic:</strong>
+          <ul>
+            <li>Dynamically display columns and rows based on the `columns` array passed as props.</li>
+            <li>Implemented a sorting feature by allowing users to click on the column headers. The table now sorts the students by the selected column in ascending or descending order.</li>
+          </ul>
+        </li>
       </ol>
    
       
