@@ -1,7 +1,10 @@
+import StudentList from "../components/StudentList";
+
 const StudentsPage = () => {
     return ( 
         <div className="StudentsPage">
-            <h2>I am Students Page</h2>
+            <h2>All pupils</h2>
+            <StudentList />
         </div>
      );
 }
