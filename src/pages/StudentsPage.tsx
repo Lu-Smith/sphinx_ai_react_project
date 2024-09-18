@@ -13,26 +13,20 @@ interface StudentProps {
 
 const StudentsPage:React.FC = () => {
 
-    const [students, setStudents] = useState<StudentProps[]>(studentsData);
-    const [foundStudents, setFoundStudents] = useState<{ name: string; form: string; send: boolean }[] | null>(null);
+    const [filteredStudents, setFilteredStudents] = useState<StudentProps[]>(studentsData);
 
     const handleSearch = (term: string) => {
 
         if (term.trim() === '') {
-            setFoundStudents([]); // Clear results if search term is empty
+          setFilteredStudents(studentsData); 
           } else {
-            const filteredStudents = students.filter(
+            const filtered = studentsData.filter(
               (student) =>
                 `${student.forename} ${student.surname} ${student.form}`
                   .toLowerCase()
                   .includes(term.toLowerCase())
             );
-      
-            setFoundStudents(filteredStudents.map(student => ({
-              name: `${student.forename} ${student.surname}`,
-              form: student.form,
-              send: student.send
-            })));
+            setFilteredStudents(filtered);
           }
         };
     
@@ -40,8 +34,8 @@ const StudentsPage:React.FC = () => {
     return ( 
         <div className="StudentsPage">
             <h2>All pupils</h2>
-            <SearchBar onSearch={handleSearch} foundStudents={foundStudents} />
-            <StudentList students={students} />
+            <SearchBar onSearch={handleSearch} />
+            <StudentList students={filteredStudents} />
         </div>
      );
 }
