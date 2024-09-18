@@ -52,6 +52,13 @@ const ExplanationPage: React.FC = () => {
           <ul>
             <li>Dynamically display columns and rows based on the `columns` array passed as props.</li>
             <li>Implemented a sorting feature by allowing users to click on the column headers. The table now sorts the students by the selected column in ascending or descending order.</li>
+            <li>Converted the static student data from a JSON file to a TypeScript file. This allows the image paths to be imported directly into the component, ensuring that each student's avatar is displayed correctly alongside their name in the table.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Styling - SCSS</strong>
+          <ul>
+            <li></li>
           </ul>
         </li>
       </ol>
