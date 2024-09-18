@@ -1,8 +1,18 @@
-import React, { useState } from 'react';
-import studentsData from '../data/students.json';
+import React from 'react';
 
-const StudentList: React.FC = () => {
-  const [students, setStudents] = useState(studentsData);
+interface StudentProps {
+    id: number;
+    forename: string;
+    surname: string;
+    form: string;
+    send: boolean;
+  }
+  
+  interface StudentListProps {
+    students: StudentProps[];
+  }
+
+const StudentList:React.FC<StudentListProps> = ({ students }) => {
 
   return (
     <div className="StudentList">
@@ -13,13 +23,13 @@ const StudentList: React.FC = () => {
                     <th>Form</th>
                     <th>SEND</th>
                 </tr>
-                </thead>
+            </thead>
                 <tbody>
                 {students.map((student) => (
                     <tr key={student.id}>
-                    <td>{student.forename} {student.surname}</td>
-                    <td>{student.form}</td>
-                    <td>{student.send ? 'Yes' : 'No'}</td>
+                        <td>{student.forename} {student.surname}</td>
+                        <td>{student.form}</td>
+                        <td>{student.send ? 'Yes' : 'No'}</td>
                     </tr>
                 ))}
             </tbody>
