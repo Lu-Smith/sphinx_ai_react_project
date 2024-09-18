@@ -13,8 +13,6 @@
   color: $primary-font-color;
   width: 100vw;
   height: 100vh;
-  @include displayDirectionJustifyFlex(column, center);
-  padding: 30px;
   font-size: $primary-font-size;
   text-align: center;
 }
