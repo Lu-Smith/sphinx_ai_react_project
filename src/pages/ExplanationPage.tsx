@@ -58,7 +58,9 @@ const ExplanationPage: React.FC = () => {
         <li>
           <strong>Styling - SCSS</strong>
           <ul>
-            <li></li>
+            <li>Created basic files (_variables, _vase, _mixins)</li>
+            <li>Created basic style for App.tsx</li>
+            <li>Created basic styles for other components</li>
           </ul>
         </li>
       </ol>
