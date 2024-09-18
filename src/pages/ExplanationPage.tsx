@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ExplanationPage = () => {
+const ExplanationPage: React.FC = () => {
   return ( 
     <div className="ExplanationPage">
       <h2>My Process</h2>
@@ -36,9 +36,15 @@ const ExplanationPage = () => {
           </ul>
         </li>
         <li>
-          <strong>Added Supportin Page</strong>
+          <strong>Added Supporting Page:</strong>
           <ul>
-            <li>Created the <code>Explanation Page</code> to summarize my progress.</li>
+            <li>Created the <code>ExplanationPage</code> to summarize my progress.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Optimized My Code:</strong>
+          <ul>
+            <li>Simplified the code by removing unnecessary code from the SearchBar and using only filtered students in the <code>StudentList</code> component.</li>
           </ul>
         </li>
       </ol>
