@@ -12,7 +12,7 @@ const App: React.FC = () => {
         <nav>
           <Link to="/">Home</Link>
           <Link to="/student">Students</Link>
-          <Link to="/explanation">Explanation</Link>
+          <Link to="/explanation">Process</Link>
         </nav>
         <Routes>
           <Route path="/" element={<HomePage />} />
