@@ -1,39 +1,53 @@
 import React from 'react';
 
 interface StudentProps {
-    id: number;
-    forename: string;
-    surname: string;
-    form: string;
-    send: boolean;
-  }
-  
-  interface StudentListProps {
-    students: StudentProps[];
-  }
+  id: number;
+  forename: string;
+  surname: string;
+  form: string;
+  send: boolean;
+}
 
-const StudentList:React.FC<StudentListProps> = ({ students }) => {
+interface Column {
+  key: keyof StudentProps;
+  label: string;
+}
+  
+interface StudentListProps {
+  students: StudentProps[];
+  columns: Column[];
+}
+
+const StudentList:React.FC<StudentListProps> = ({ students, columns }) => {
+
+  const isBoolean = (value: any): value is boolean => typeof value === 'boolean';
 
   return (
     <div className="StudentList">
-        <table>
-            <thead>
-                <tr>
-                    <th>Pupil's Name</th>
-                    <th>Form</th>
-                    <th>SEND</th>
-                </tr>
-            </thead>
-                <tbody>
-                {students.map((student) => (
-                    <tr key={student.id}>
-                        <td>{student.forename} {student.surname}</td>
-                        <td>{student.form}</td>
-                        <td>{student.send ? 'Yes' : 'No'}</td>
-                    </tr>
-                ))}
-            </tbody>
-        </table>
+      <table>
+        <thead>
+          <tr>
+            {columns.map((col) => (
+              <th key={col.key}>{col.label}</th>
+            ))}
+          </tr>
+        </thead>
+          <tbody>
+          {students.map((student) => (
+            <tr key={student.id}>
+              {columns.map((col) => (
+                <td key={col.key}>
+                  {isBoolean(student[col.key])
+                    ? student[col.key]
+                      ? 'Yes'
+                      : 'No'
+                    : student[col.key]}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
