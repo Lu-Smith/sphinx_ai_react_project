@@ -13,7 +13,7 @@ interface StudentProps {
 }
 
 interface Column {
-  key: keyof StudentProps;
+  key: keyof StudentProps | 'fullName';
   label: string;
 }
 
@@ -22,8 +22,7 @@ const StudentsPage:React.FC = () => {
     const [filteredStudents, setFilteredStudents] = useState<StudentProps[]>(studentsData);
 
     const columns: Column[] = [
-      { key: 'forename', label: "Forename" },
-      { key: 'surname', label: "Surname" },
+      { key: 'fullName', label: "Full Name"},
       { key: 'form', label: "Form" },
       { key: 'send', label: "SEND" }
     ];
