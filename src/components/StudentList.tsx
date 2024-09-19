@@ -85,6 +85,7 @@ const StudentList:React.FC<StudentListProps> = ({ students, columns }) => {
                     <img
                       src={student.src}
                       alt={`${student.forename}'s avatar`}
+                      loading="lazy"
                     />
                     {`${student.forename} ${student.surname}`}
                   </div>
