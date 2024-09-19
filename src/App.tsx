@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import StudentsPage from './pages/StudentsPage';
 import ExplanationPage from './pages/ExplanationPage';
 import './styles/app.scss';
+import { FaHome } from "react-icons/fa";
 
 const App: React.FC = () => {
 
@@ -11,7 +12,7 @@ const App: React.FC = () => {
     <Router>
       <div className="App">
         <nav>
-          <Link to="/">Home</Link>
+          <Link to="/" className='home-container-link'><FaHome /></Link>
           <Link to="/student">Students</Link>
           <Link to="/explanation">Process</Link>
         </nav>
