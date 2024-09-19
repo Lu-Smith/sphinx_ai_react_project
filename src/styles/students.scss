@@ -36,6 +36,11 @@
         top: 50%;
         transform: translateY(-50%); 
         font-size: 25px;
+
+        @media screen and (max-width: 786px) {
+          font-size: 20px;
+          right: 10px;
+        }
       }
 
       &:hover {
