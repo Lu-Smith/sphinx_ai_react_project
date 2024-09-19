@@ -20,17 +20,45 @@
   thead {
     background-color: $primary-font-color;
     color: $primary-background-color;
-
+   
     th {
       cursor: pointer;
       font-weight: bold;
       transition: background-color 0.3s ease;
       height: 60px;
       padding: 0 20px;
+      position: relative;
+
+      .sortIcon {
+        color: $focus-font-color;
+        position: absolute;  
+        right: 20px;    
+        top: 50%;
+        transform: translateY(-50%); 
+        font-size: 25px;
+      }
 
       &:hover {
         background-color: $focus-font-color;
       }
+    }
+
+    .header-fullName, .header-form, .header-send {
+      &.active {
+        background-color: rgba($secondary-background-color, 0.1); 
+      }
+    }
+
+    .header-form {
+      min-width: 200px;
+    }
+
+    .header-form {
+      min-width: 150px;
+    }
+
+    .header-send {
+      min-width: 100px;
     }
   }
 
