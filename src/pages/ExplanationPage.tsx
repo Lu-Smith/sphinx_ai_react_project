@@ -48,20 +48,21 @@ const ExplanationPage: React.FC = () => {
           </ul>
         </li>
         <li>
-          <strong>Made Table Dynamic:</strong>
+          <strong>Dynamic Table Implementation:</strong>
           <ul>
             <li>Dynamically display columns and rows based on the `columns` array passed as props.</li>
             <li>Implemented a sorting feature by allowing users to click on the column headers. The table now sorts the students by the selected column in ascending or descending order.</li>
-            <li>Converted the static student data from a JSON file to a TypeScript file. This allows the image paths to be imported directly into the component, ensuring that each student's avatar is displayed correctly alongside their name in the table.</li>
+            <li>Converted static student data from a JSON file to a TypeScript file. This allows the image paths to be imported directly into the component, ensuring that each student's avatar is displayed correctly alongside their name in the table.</li>
           </ul>
         </li>
         <li>
-          <strong>Styling - SCSS</strong>
+          <strong>Styling with SCSS</strong>
           <ul>
-            <li>Created basic files (_variables, _vase, _mixins)</li>
-            <li>Created basic style for App.tsx</li>
-            <li>Created basic styles for other components</li>
-            <li>Fixed visibility proble with full name in the table</li>
+          <li>Set up foundational SCSS files, including `_variables`, `_base`, and `_mixins` for reusable styles.</li>
+          <li>Developed basic styling for the `App.tsx` component and extended styling to other components.</li>
+          <li>Resolved visibility issues with student names in the table for improved readability.</li>
+          <li>Enhanced overall design by integrating `react-icons` for visual clarity.</li>
+          <li>Added smooth animations using `framer-motion` to enrich user experience.</li>
           </ul>
         </li>
       </ol>
