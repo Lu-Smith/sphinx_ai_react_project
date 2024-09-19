@@ -57,7 +57,21 @@
           border-radius: 50%;
           margin-right: 15px;
         }
+
+        .tick {
+          color: green;
+          font-size: 40px;
+        }
+
+        .cross {
+          color: $focus-font-color;
+          font-size: $primary-font-size;
+        }
       }
     }
   }
+}
+
+.SearchBar {
+  @include displayCenterFlex;
 }
