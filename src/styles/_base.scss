@@ -15,6 +15,11 @@ nav {
 h1 {
   font-family: $secondary-family-font;
   font-size: $large-font-size;
+  margin-bottom: 10px;
+
+  span{
+    font-family: $primary-family-font;
+  }
 }
 
 h2 {
@@ -40,25 +45,32 @@ input {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   font-size: $primary-font-size;
-  width: min(80%, 750px);
+  width: min(80%, 720px);
   height: 60px;
   border: none;
   border-top: 2px solid $focus-font-color;
   border-bottom: 2px solid $focus-font-color;
   border-left: 2px solid $focus-font-color;
   background-color: white;
+
+  &:focus {
+    outline: none;  
+    border-color: $focus-font-color;
+    box-shadow: none;
+  }
 }
 
 .searchIcon {
   border-right: 2px solid $focus-font-color;
   border-top: 2px solid $focus-font-color;
   border-bottom: 2px solid $focus-font-color;
-  width: 50px;
+  width: 80px;
   height: 60px;
   font-size: $primary-font-size;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   background-color: white;
+  padding: 5px 20px 5px 0;
 }
 
 
