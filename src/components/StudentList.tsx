@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from 'react';
+import { TiTick } from "react-icons/ti";
+import { ImCross } from "react-icons/im";
 
 interface StudentProps {
   id: number;
@@ -74,7 +76,7 @@ const StudentList:React.FC<StudentListProps> = ({ students, columns }) => {
                     {`${student.forename} ${student.surname}`}
                   </div>
                 ) : isBoolean(student[col.key]) ? (
-                  student[col.key] ? 'Yes' : 'No'
+                  student[col.key] ? <TiTick className='tick'/> : <ImCross className='cross'/>
                 ) : (
                   student[col.key]
                 )}
