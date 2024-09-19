@@ -61,6 +61,7 @@ const ExplanationPage: React.FC = () => {
             <li>Created basic files (_variables, _vase, _mixins)</li>
             <li>Created basic style for App.tsx</li>
             <li>Created basic styles for other components</li>
+            <li>Fixed visibility proble with full name in the table</li>
           </ul>
         </li>
       </ol>
