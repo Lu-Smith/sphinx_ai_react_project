@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { TiTick } from "react-icons/ti";
 import { ImCross } from "react-icons/im";
+import { FaArrowUpAZ } from "react-icons/fa6";
+import { FaArrowUpZA } from "react-icons/fa6";
 
 interface StudentProps {
   id: number;
@@ -56,8 +58,14 @@ const StudentList:React.FC<StudentListProps> = ({ students, columns }) => {
       <thead>
         <tr>
           {columns.map((col) => (
-            <th key={col.key}  onClick={() => handleSort(col.key)}>
-              {col.label} {sortColumn === col.key ? (sortOrder === 'asc' ? '🔼' : '🔽') : ''}
+            <th 
+            key={col.key}  
+            className={`header-${col.key} ${sortColumn === col.key ? 'active' : ''}`} 
+            onClick={() => handleSort(col.key)}>
+              {col.label} {sortColumn === col.key ? 
+              (sortOrder === 'asc' ? 
+              <FaArrowUpAZ  className='sortIcon'/> : 
+              <FaArrowUpZA className='sortIcon' />) : ''}
             </th>
           ))}
         </tr>
@@ -76,7 +84,9 @@ const StudentList:React.FC<StudentListProps> = ({ students, columns }) => {
                     {`${student.forename} ${student.surname}`}
                   </div>
                 ) : isBoolean(student[col.key]) ? (
-                  student[col.key] ? <TiTick className='tick'/> : <ImCross className='cross'/>
+                  student[col.key] ? 
+                  <TiTick className='tick'/> : 
+                  <ImCross className='cross'/>
                 ) : (
                   student[col.key]
                 )}
