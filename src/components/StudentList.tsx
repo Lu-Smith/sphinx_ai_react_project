@@ -3,6 +3,7 @@ import { TiTick } from "react-icons/ti";
 import { ImCross } from "react-icons/im";
 import { FaArrowUpAZ } from "react-icons/fa6";
 import { FaArrowUpZA } from "react-icons/fa6";
+import { motion } from 'framer-motion';
 
 interface StudentProps {
   id: number;
@@ -72,7 +73,11 @@ const StudentList:React.FC<StudentListProps> = ({ students, columns }) => {
       </thead>
       <tbody>
         {sortedStudents.map((student) => (
-          <tr key={student.id}>
+          <motion.tr 
+           key={student.id}
+           whileHover={{ scale: 0.95}}  
+           transition={{ duration: 0.3 }}  
+          >
             {columns.map((col) => (
               <td key={col.key}>
                   {col.key === 'fullName' ? (
@@ -92,7 +97,7 @@ const StudentList:React.FC<StudentListProps> = ({ students, columns }) => {
                 )}
               </td>
             ))}
-          </tr>
+          </motion.tr>
         ))}
       </tbody>
     </table>
