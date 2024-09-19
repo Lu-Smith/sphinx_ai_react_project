@@ -1,10 +1,14 @@
 .ExplanationPage {
   margin: 0 auto;
-
+  
   ol {
     text-align: left;
-    width: min(90%, 800px);
+    width: min(85%, 800px);
     margin-left: 40px;
+
+    ul {
+      margin-bottom: 10px;
+    }
 
     li {
       margin-left: 30px;

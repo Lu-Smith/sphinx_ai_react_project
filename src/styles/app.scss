@@ -21,3 +21,9 @@
     font-size: 30px;
   }
 }
+
+@media  screen and (max-width: 786px) {
+  .App {
+    font-size: $mobile-font-size;
+  }
+}
