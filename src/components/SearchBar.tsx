@@ -1,4 +1,5 @@
 import React from 'react';
+import { FcSearch } from "react-icons/fc";
 
 interface SearchBarProps {
   onSearch: (searchStudents: string) => void;
@@ -16,6 +17,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         placeholder="Search for pupils or forms..."
         onChange={handleSearch}
       />
+      <FcSearch className='searchIcon' />
     </div>
   );
 };
